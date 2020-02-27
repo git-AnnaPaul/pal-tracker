@@ -19,6 +19,7 @@ apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 // 3) set some standard properties
+version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 // 4) repos to search to resolve dependencies for the project
 repositories {
@@ -37,7 +38,9 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
+bootJar {
+    archiveName = "pal-tracker.jar"
+}
 bootRun.environment([
         "WELCOME_MESSAGE": "hello Anna",
 ])
