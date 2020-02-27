@@ -29,6 +29,20 @@ repositories {
 dependencies {
     //implementation('org.springframework.boot:spring-boot-starter-security')
     implementation('org.springframework.boot:spring-boot-starter-web')
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testImplementation('org.springframework.boot:spring-boot-starter-test'){
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
     testImplementation('org.springframework.security:spring-security-test')
 }
+
+test {
+    useJUnitPlatform()
+}
+
+bootRun.environment([
+        "WELCOME_MESSAGE": "hello Anna",
+])
+
+test.environment([
+        "WELCOME_MESSAGE": "Hello from test",
+])
