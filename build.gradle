@@ -38,6 +38,9 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+bootJar {
+    archiveName ="pal-tracker.jar"
+}
 
 bootRun.environment([
         "WELCOME_MESSAGE": "hello Anna",
