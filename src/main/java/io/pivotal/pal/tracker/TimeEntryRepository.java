@@ -7,11 +7,11 @@ public interface TimeEntryRepository{
 
     public TimeEntry create(TimeEntry timeEntry);
 
-    public TimeEntry find( long timeEntryId);
+    public TimeEntry find( Long timeEntryId);
 
     public  List<TimeEntry>  list();
 
-    public TimeEntry update(long id, TimeEntry timeEntry);
+    public TimeEntry update(Long id, TimeEntry timeEntry);
 
-    public void delete(long id);
+    public void delete(Long id);
 }
