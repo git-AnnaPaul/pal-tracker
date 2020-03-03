@@ -15,7 +15,7 @@ jobs:
         java-version: 11
     - name: Create test database
       run: |
-        mysql -uroot -proot < databases/tracker/create_databases.sql
+        sudo chmod +x gradlew && mysql -uroot -proot < databases/tracker/create_databases.sql
         ./gradlew testMigrate
     - name: Build with Gradle
       run: sudo chmod +x gradlew && ./gradlew build
